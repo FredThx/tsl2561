@@ -46,7 +46,8 @@ class TSL2561:
         self.address = address
         sensor_id = self.sensor_id()
         if not sensor_id & 0x10:
-            raise RuntimeError("bad sensor id 0x{:x}".format(sensor_id))
+            print(f"bad sensor id 0x{sensor_id}")
+            #raise RuntimeError("bad sensor id 0x{:x}".format(sensor_id))
         self._active = False
         self._gain = 1
         self._integration_time = 13
